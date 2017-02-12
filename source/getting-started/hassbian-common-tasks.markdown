@@ -16,7 +16,7 @@ Connect to the Raspberry Pi over ssh. Default user name is `pi` and password is 
 Linux and Mac OS users execute the following command in a terminal.
 
 ```bash
-$ ssh pi@ip-address-of-pi
+ssh pi@ip-address-of-pi
 ```
 
 Windows users start [Putty][ssh-putty], enter the IP address of the Raspberry Pi in the *Host name* field and port 22 in the *Port* field. Then click *Open* and a terminal window will open. Enter the credentials. Default user name is `pi` and password is `raspberry`.
@@ -27,7 +27,7 @@ Optionally, starting with Windows 10 anniversary update, you can use the built-i
 Log in as the `pi` account account and execute the following commands:
 
 ```bash
-$ sudo systemctl stop home-assistant@homeassistant.service 
+sudo systemctl stop home-assistant@homeassistant.service 
 ```
 
 Replace `stop` with `start` or `restart` to get the desired functionality.
@@ -38,12 +38,12 @@ To get the current state of the `homeassistant.service` replace `stop` with `sta
 Log in as the `pi` account and execute the following commands:
 
 ```bash
-$ sudo systemctl stop home-assistant@homeassistant.service 
-$ sudo su -s /bin/bash homeassistant
-$ source /srv/homeassistant/bin/activate
-$ pip3 install --upgrade homeassistant
-$ exit
-$ sudo systemctl start home-assistant@homeassistant.service
+sudo systemctl stop home-assistant@homeassistant.service 
+sudo su -s /bin/bash homeassistant
+source /srv/homeassistant/bin/activate
+pip3 install --upgrade homeassistant
+exit
+sudo systemctl start home-assistant@homeassistant.service
 ```
 
 This will in order do the following:
@@ -59,9 +59,9 @@ This will in order do the following:
 Log in as the `pi` account and execute the following commands:
 
 ```bash
-$ sudo su -s /bin/bash homeassistant
-$ source /srv/homeassistant/bin/activate
-$ hass
+sudo su -s /bin/bash homeassistant
+source /srv/homeassistant/bin/activate
+hass
 ```
 
 This will start Home Assistant in your shell and output anything that ends up in the log and more into the console. This will fail if the Home Assistant service is already running so don't forget to [stop][stop-homeassistant] it first.
@@ -70,9 +70,9 @@ This will start Home Assistant in your shell and output anything that ends up in
 Log in as the `pi` account and execute the following commands:
 
 ```bash
-$ sudo su -s /bin/bash homeassistant
-$ source /srv/homeassistant/bin/activate
-$ hass --script check_config
+sudo su -s /bin/bash homeassistant
+source /srv/homeassistant/bin/activate
+hass --script check_config
 ```
 
 This will output any errors in your configuration files to console.
@@ -81,9 +81,9 @@ This will output any errors in your configuration files to console.
 Log in as the `pi` account and execute the following commands:
 
 ```bash
-$ sudo su -s /bin/bash homeassistant
-$ cd /home/homeassistant/.homeassistant
-$ nano homeassistant.log
+sudo su -s /bin/bash homeassistant
+cd /home/homeassistant/.homeassistant
+nano homeassistant.log
 ```
 
 This will in order do the following:
@@ -96,7 +96,7 @@ Optionaly, you can also view the log with `journalctl`.
 Log in as the `pi` account and execute the following commands:
 
 ```bash
-$ sudo journalctl -fu home-assistant@homeassistant.service
+sudo journalctl -fu home-assistant@homeassistant.service
 ```
 
 ### {% linkable_title Edit the Home Assistant configuration %}
@@ -104,9 +104,9 @@ $ sudo journalctl -fu home-assistant@homeassistant.service
 Log in as the `pi` account and execute the following commands:
 
 ```bash
-$ sudo su -s /bin/bash homeassistant
-$ cd /home/homeassistant/.homeassistant
-$ nano configuration.yaml
+sudo su -s /bin/bash homeassistant
+cd /home/homeassistant/.homeassistant
+nano configuration.yaml
 ```
 
 This will in order do the following:
@@ -120,7 +120,7 @@ It's generally recommended that you read the [Getting started][configuring-homea
 ### {% linkable_title Change locale, timezone and keyboard layout %}
 
 ```bash
-$ sudo raspi-config
+sudo raspi-config
 ```
 
 [configuring-homeassistant]: /getting-started/configuration/
